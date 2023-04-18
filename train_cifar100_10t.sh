@@ -8,7 +8,7 @@ python train.py \
 --model resnet18 \
 --mode sup_simclr_CSI \
 --batch_size 128 \
---epoch 700 \
+--epoch 100 \
 --t $t \
 --amp \
 --lamb0 1.5 \
@@ -64,7 +64,7 @@ do
 	--model resnet18 \
 	--mode sup_simclr_CSI \
 	--batch_size 128 \
-	--epoch 700 \
+	--epoch 100 \
 	--t $t \
 	--amp \
 	--lamb0 1.5 \
