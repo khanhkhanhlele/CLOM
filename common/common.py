@@ -39,10 +39,10 @@ def parse_args(default=False):
 
     ##### Training Configurations #####
     parser.add_argument('--epochs', help='Epochs',
-                        default=700, type=int)
+                        default=100, type=int)
     parser.add_argument('--optimizer', help='Optimizer',
                         choices=['sgd', 'adam', 'lars'],
-                        default='lars', type=str)
+                        default='sgd', type=str)
     parser.add_argument('--lr_scheduler', help='Learning rate scheduler',
                         choices=['step_decay', 'cosine'],
                         default='cosine', type=str)

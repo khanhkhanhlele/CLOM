@@ -114,7 +114,7 @@ def get_subclass_dataset(P, dataset, classes, f_select=None, l_select=None, val=
     if 'tinyImagenet' in P.dataset:
         cal_size = 10
     else:
-        cal_size = 20
+        cal_size = 20 
 
     if not isinstance(classes, list):
         classes = [classes]

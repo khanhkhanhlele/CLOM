@@ -188,7 +188,7 @@ class ResNet(BaseModel):
         if 'cifar10' in P.dataset and 'cifar100' not in P.dataset:
             init_dim, last_dim = 64, 512 # last_dim = init_dim * 8
         elif 'cifar100' in P.dataset or 'tinyImagenet' in P.dataset:
-            init_dim, last_dim = 128, 1024
+            init_dim, last_dim = 64, 512
         super(ResNet, self).__init__(last_dim, P, num_classes)
 
         self.in_planes = init_dim
@@ -214,7 +214,7 @@ class ResNet(BaseModel):
         self.layer2 = self._make_layer(P, block, init_dim * 2, num_blocks[1], stride=2, pooling=False) # LAYER2.0.SHORTCUT
         self.layer3 = self._make_layer(P, block, init_dim * 4, num_blocks[2], stride=2, pooling=False) # LAYER3.0.SHORTCUT
         self.layer4 = self._make_layer(P, block, last_dim, num_blocks[3], stride=2, pooling=True) # LAYER4.0.SHORTCUT
-
+        
     def _make_layer(self, P, block, planes, num_blocks, stride, pooling=False):
         strides = [stride] + [1]*(num_blocks-1)
         pooling_ = False
@@ -263,7 +263,7 @@ class ResNet(BaseModel):
         for op in self.layer4:
             t, x, msk, s = op(t, x, msk, s) # the output x is (100, 512, 1, 1)
         # out = self.layer4(out)
-
+        x = F.avg_pool2d(x, x.shape[2])
         # out = F.avg_pool2d(x, 4)
         out = x.view(x.size(0), -1)
 

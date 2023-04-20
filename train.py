@@ -33,7 +33,9 @@ else:
     linear = model.linear
 
 linear_optim = torch.optim.Adam(linear.parameters(), lr=1e-3, betas=(.9, .999), weight_decay=P.weight_decay)
-
+############################
+print("_____________________________________________")
+print(model)
 # Training starts
 try:
     for epoch in range(start_epoch, P.epochs + 1):
