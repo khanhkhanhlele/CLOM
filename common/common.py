@@ -42,7 +42,7 @@ def parse_args(default=False):
                         default=100, type=int)
     parser.add_argument('--optimizer', help='Optimizer',
                         choices=['sgd', 'adam', 'lars'],
-                        default='sgd', type=str)
+                        default='lars', type=str)
     parser.add_argument('--lr_scheduler', help='Learning rate scheduler',
                         choices=['step_decay', 'cosine'],
                         default='cosine', type=str)
