@@ -13,7 +13,7 @@ from utils.utils import set_random_seed
 
 MNIST_SUPERCLASS = np.arange(10).reshape(5, 2).tolist()
 CIFAR10_SUPERCLASS = np.arange(10).reshape(5, 2).tolist()
-CIFAR100_SUPERCLASS_10T = np.arange(100).reshape(10, 10).tolist()
+CIFAR100_SUPERCLASS_10T = np.arange(100).reshape(5, 20).tolist()
 CIFAR100_SUPERCLASS_20T = np.arange(100).reshape(20, 5).tolist()
 TINYIMAGENET_SUPERCLASS_5T = np.arange(200).reshape(5, 40).tolist()
 TINYIMAGENET_SUPERCLASS_10T = np.arange(200).reshape(10, 20).tolist()
