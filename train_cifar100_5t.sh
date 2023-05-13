@@ -55,7 +55,7 @@ python eval.py \
 --adaptation_lr 0.01 \
 --weight_decay=0
 
-for t in 1 2 3 4 5 6 7 8 9
+for t in 1 2 3 4 
 do
 	# Representation train
 	CUDA_VISIBLE_DEVICES=0 \
@@ -64,7 +64,7 @@ do
 	--model resnet18 \
 	--mode sup_simclr_CSI \
 	--batch_size 128 \
-	--epoch 200 \
+	--epoch 100 \
 	--t $t \
 	--amp \
 	--lamb0 1.5 \
