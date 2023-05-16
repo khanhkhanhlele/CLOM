@@ -4,7 +4,7 @@ t=0
 # Representation train
 CUDA_VISIBLE_DEVICES=0 \
 python train.py \
---dataset cifar100_10t \
+--dataset cifar100_5t \
 --model resnet18 \
 --mode sup_simclr_CSI \
 --batch_size 128 \
@@ -18,7 +18,7 @@ python train.py \
 CUDA_VISIBLE_DEVICES=0 \
 python train.py \
 --mode sup_CSI_linear \
---dataset cifar100_10t \
+--dataset cifar100_5t \
 --model resnet18 \
 --batch_size 128 \
 --epoch 100 \
@@ -28,7 +28,7 @@ python train.py \
 CUDA_VISIBLE_DEVICES=0 \
 python eval.py \
 --mode test_marginalized_acc \
---dataset cifar100_10t \
+--dataset cifar100_5t \
 --model resnet18 \
 --t $t \
 --all_dataset \
@@ -37,7 +37,7 @@ python eval.py \
 CUDA_VISIBLE_DEVICES=0 \
 python eval.py \
 --mode cil \
---dataset cifar100_10t \
+--dataset cifar100_5t \
 --model resnet18 \
 --batch_size 128 \
 --cil_task $t \
@@ -47,7 +47,7 @@ python eval.py \
 CUDA_VISIBLE_DEVICES=0 \
 python eval.py \
 --mode cil_pre \
---dataset cifar100_10t \
+--dataset cifar100_5t \
 --model resnet18 \
 --batch_size 32 \
 --cil_task $t \
@@ -60,7 +60,7 @@ do
 	# Representation train
 	CUDA_VISIBLE_DEVICES=0 \
 	python train.py \
-	--dataset cifar100_10t \
+	--dataset cifar100_5t \
 	--model resnet18 \
 	--mode sup_simclr_CSI \
 	--batch_size 128 \
@@ -74,7 +74,7 @@ do
 	CUDA_VISIBLE_DEVICES=0 \
 	python train.py \
 	--mode sup_CSI_linear \
-	--dataset cifar100_10t \
+	--dataset cifar100_5t \
 	--model resnet18 \
 	--batch_size 128 \
 	--epoch 100 \
@@ -84,7 +84,7 @@ do
 	CUDA_VISIBLE_DEVICES=0 \
 	python eval.py \
 	--mode test_marginalized_acc \
-	--dataset cifar100_10t \
+	--dataset cifar100_5t \
 	--model resnet18 \
 	--t $t \
 	--all_dataset \
@@ -93,7 +93,7 @@ do
 	CUDA_VISIBLE_DEVICES=0 \
 	python eval.py \
 	--mode cil \
-	--dataset cifar100_10t \
+	--dataset cifar100_5t \
 	--model resnet18 \
 	--batch_size 128 \
 	--cil_task $t \
@@ -103,7 +103,7 @@ do
 	CUDA_VISIBLE_DEVICES=0 \
 	python eval.py \
 	--mode cil_pre \
-	--dataset cifar100_10t \
+	--dataset cifar100_5t \
 	--model resnet18 \
 	--batch_size 32 \
 	--cil_task $t \

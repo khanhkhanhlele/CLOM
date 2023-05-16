@@ -13,6 +13,7 @@ from utils.utils import set_random_seed
 
 MNIST_SUPERCLASS = np.arange(10).reshape(5, 2).tolist()
 CIFAR10_SUPERCLASS = np.arange(10).reshape(5, 2).tolist()
+CIFAR100_SUPERCLASS_5T = np.arange(100).reshape(5, 20).tolist()
 CIFAR100_SUPERCLASS_10T = np.arange(100).reshape(10, 10).tolist()
 CIFAR100_SUPERCLASS_20T = np.arange(100).reshape(20, 5).tolist()
 TINYIMAGENET_SUPERCLASS_5T = np.arange(200).reshape(5, 40).tolist()
@@ -63,6 +64,8 @@ def get_dataset(P, dataset, test_only=False, image_size=None, download=False):
             n_cls_per_task = 10
         elif P.dataset == 'cifar100_20t':
             n_cls_per_task = 5
+        elif P.dataset == 'cifar100_5t':
+            n_cls_per_task = 20
         train_set = CIFAR100(P.data_path, train=True, download=download, transform=train_transform)
         test_set = CIFAR100(P.data_path, train=False, download=download, transform=test_transform)
 
@@ -93,6 +96,8 @@ def get_superclass_list(dataset):
         return MNIST_SUPERCLASS
     elif dataset == 'cifar10':
         return CIFAR10_SUPERCLASS
+    elif dataset == 'cifar100_5t':
+        return CIFAR100_SUPERCLASS_5T
     elif dataset == 'cifar100_10t':
         return CIFAR100_SUPERCLASS_10T
     elif dataset == 'cifar100_20t':
