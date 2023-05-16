@@ -9,7 +9,7 @@ def parse_args(default=False):
     parser.add_argument('--dataset', help='Dataset',
                         choices=['mnist', 'cifar10',
                         'cifar100_10t', 'cifar100_20t',
-                        'tinyImagenet_5t', 'tinyImagenet_10t'], type=str)
+                        'tinyImagenet_5t', 'tinyImagenet_10t','cifar100_5t'], type=str)
     parser.add_argument('--model', help='Model',
                         default='resnet18', choices=['mlp', 'resnet18'], type=str)
     parser.add_argument('--mode', help='Training/inference mode',
