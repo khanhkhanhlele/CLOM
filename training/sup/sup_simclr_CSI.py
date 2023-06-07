@@ -166,14 +166,14 @@ def train(P, epoch, model, criterion, optimizer, scheduler, loader, p_mask, mask
         losses['cls'].update(0, batch_size)
         losses['sim'].update(loss_sim.item(), batch_size)
 
-        if count % 50 == 0:
-            P.logger.print('[Epoch %3d; %3d] [Time %.3f] [Data %.3f] [LR %.5f]\n'
-                 '[LossC %f] [LossSim %f]' %
-                 (epoch, count, batch_time.value, data_time.value, lr,
-                  losses['cls'].value, losses['sim'].value))
+        # if count % 50 == 0:
+        #     P.logger.print('[Epoch %3d; %3d] [Time %.3f] [Data %.3f] [LR %.5f]\n'
+        #          '[LossC %f] [LossSim %f]' %
+        #          (epoch, count, batch_time.value, data_time.value, lr,
+        #           losses['cls'].value, losses['sim'].value))
 
         check = time.time()
 
-    P.logger.print('[DONE] [Time %.3f] [Data %.3f] [LossC %f] [LossSim %f]' %
-         (batch_time.average, data_time.average,
-          losses['cls'].average, losses['sim'].average))
+    # P.logger.print('[DONE] [Time %.3f] [Data %.3f] [LossC %f] [LossSim %f]' %
+    #      (batch_time.average, data_time.average,
+    #       losses['cls'].average, losses['sim'].average))
