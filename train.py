@@ -67,7 +67,7 @@ try:
             if is_best:
                 best = error
 
-            P.logger.print('[Epoch %3d] [Test %5.2f] [Best %5.2f]' % (epoch, error, best))
+            P.logger.print(f'\r[Epoch %3d] [Test %5.2f] [Best %5.2f]' % (epoch, error, best) , end = '')
 
 except KeyboardInterrupt:
     P.logger.print()
