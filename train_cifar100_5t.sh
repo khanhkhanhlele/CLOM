@@ -8,7 +8,7 @@ python train.py \
 --model resnet18 \
 --mode sup_simclr_CSI \
 --batch_size 128 \
---epoch 2 \
+--epoch 6 \
 --t $t \
 --amp \
 --lamb0 1.5 \
@@ -21,7 +21,7 @@ python train.py \
 --dataset cifar100_5t \
 --model resnet18 \
 --batch_size 128 \
---epoch 2 \
+--epoch 6 \
 --t $t
 
 # ACCURACY & ECE
@@ -64,7 +64,7 @@ do
 	--model resnet18 \
 	--mode sup_simclr_CSI \
 	--batch_size 128 \
-	--epoch 2 \
+	--epoch 6 \
 	--t $t \
 	--amp \
 	--lamb0 1.5 \
@@ -77,7 +77,7 @@ do
 	--dataset cifar100_5t \
 	--model resnet18 \
 	--batch_size 128 \
-	--epoch 2 \
+	--epoch 6 \
 	--t $t
 
 	# ACCURACY & ECE
