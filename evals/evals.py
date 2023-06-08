@@ -42,7 +42,11 @@ def cil_pre(P, model, loaders, steps, criterion, test_loaders, marginal=False, l
         # For each task loader
         for t_loader, loader in loaders.items():
             # load a batch from a task loader
-            images, labels = iter(loader).next()
+            #images, labels = iter(loader).next()
+            loader_iter = iter(loader)
+            images, labels = next(loader_iter)
+
+
             images, labels = images.to(device), labels.to(device)
 
             # Obtain the output heads of the batch and concatenate them for CIL
