@@ -24,7 +24,7 @@ ece_criterion = _ECELoss().to(device)
 def cil_pre(P, model, loaders, steps, criterion, test_loaders, marginal=False, logger=None):
     """ training output calibration """
     counter = 0
-
+    print("training output calibration")
     # Initialize scaling and shifting parameters
     w = torch.rand(P.cil_task + 1, requires_grad=True, device=device)
     b = torch.rand(P.cil_task + 1, requires_grad=True, device=device)
